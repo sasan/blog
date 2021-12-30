@@ -8,7 +8,9 @@ const Post = ({ image, title, excerpt, readMore, alt }) => (
                 <Card.Img variant="top" src={image} alt={alt || "default alt"}/>
                 <Card.Body>
                     <Card.Title dangerouslySetInnerHTML={{ __html: title }} />
-                    <Card.Text dangerouslySetInnerHTML={{ __html: excerpt }} />
+                    <Card.Text>
+                        <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+                    </Card.Text>
                     <Button variant="warning" href={readMore}>Read More</Button>
                 </Card.Body>
             </Card>
