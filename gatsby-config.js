@@ -32,5 +32,18 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Fashion Blog`,
+        short_name: `Blog`,
+        start_url: `/`,
+        background_color: `#f8f9fa`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+        icon: `src/images/favicon.ico`
+      },
+    },
+    `gatsby-plugin-offline`
   ]
 }
