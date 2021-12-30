@@ -13,6 +13,7 @@ export const query = graphql`
       featuredImage {
         node {
           sourceUrl
+          slug
         }
       }
     }
@@ -25,6 +26,7 @@ const Home = ({ data }) => {
   return (<PrimaryLayout col="col-xs-6">
     {data.allWpPost.nodes.map(node => (
       <Post
+        alt={node.featuredImage.node.slug}
         image={node.featuredImage.node.sourceUrl}
         title={node.title}
         excerpt={node.excerpt}

@@ -28,19 +28,21 @@ const BlogpostLayout = ({ data }) => {
     return (
         <div>
             <SEO
-             title={post.title}
-             description={post.description}
-             image={post.featuredImage.node.sourceUrl}
-             keywords={post.categories.nodes.map(res => res.name).join(",")} />
+                title={post.title}
+                description={post.description}
+                image={post.featuredImage.node.sourceUrl}
+                keywords={post.categories.nodes.map(res => res.name).join(",")} />
             <Header />
-            <div className="container">
-                <div className="p-5">
-                    <div className="row justify-content-md-center">
-                        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-                        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <main>
+                <div className="container">
+                    <div className="p-5">
+                        <div className="row justify-content-md-center">
+                            <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+                            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </main>
             <Footer />
         </div>
     );
